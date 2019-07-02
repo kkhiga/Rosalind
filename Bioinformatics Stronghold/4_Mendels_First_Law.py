@@ -1,4 +1,7 @@
 #%%
+%reset
+from timeit import default_timer as timer
+start = timer()
 with open('rosalind_iprb.txt') as dataset:
     dataset = dataset.readline().strip().split(' ')
     # Homozygous Dominant (AA)
@@ -32,3 +35,7 @@ with open('rosalind_iprb.txt') as dataset:
 
     with open('rosalind_irpb_out.txt', 'w') as output: 
         output.write(str(prob_dom))
+
+
+end = timer()
+print("Time Elapsed: " + str(end - start) + " seconds")

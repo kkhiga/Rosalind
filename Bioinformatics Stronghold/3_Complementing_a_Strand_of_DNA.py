@@ -1,4 +1,8 @@
 #%%
+%reset
+from timeit import default_timer as timer
+start = timer()
+
 with open('rosalind_revc.txt') as dataset:
     dna_sequence = dataset.readline().strip()
     complement = ''
@@ -15,3 +19,6 @@ with open('rosalind_revc.txt') as dataset:
         i -= 1
     with open('rosalind_revc_out.txt', 'w') as output:
         output.write(complement)
+
+end = timer()
+print("Time Elapsed: " + str(end - start) + " seconds")

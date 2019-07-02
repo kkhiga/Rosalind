@@ -1,5 +1,8 @@
 #%%
 %reset
+from timeit import default_timer as timer
+start = timer()
+
 CODON_LENGTH = 3
 # Parse the RNA Codon Table into a dict, rna_codons
 rna_codons = {}
@@ -26,3 +29,6 @@ with open('rosalind_prot.txt') as dataset:
 # Write result to a file, 'rosalind_prot_out.txt'
 with open('rosalind_prot_out.txt', 'w') as output:
     output.write(mrna_sequence)
+
+end = timer()
+print("Time Elapsed: " + str(end - start) + " seconds")

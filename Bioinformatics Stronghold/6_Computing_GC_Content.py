@@ -1,5 +1,8 @@
 #%%
 %reset
+from timeit import default_timer as timer
+start = timer()
+
 def calc_GC(sequence):
     GC_count = 0
     for symbol in sequence:
@@ -26,3 +29,6 @@ with open('rosalind_gc.txt') as dataset:
 
     with open('rosalind_gc_out.txt', 'w') as output:
         output.write('%s\n%s' % (sequence_id, highest_GC))
+                    
+end = timer()
+print("Time Elapsed: " + str(end - start) + " seconds")

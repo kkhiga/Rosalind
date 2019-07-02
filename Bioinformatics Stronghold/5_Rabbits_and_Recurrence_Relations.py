@@ -1,5 +1,7 @@
 #%%
 %reset
+from timeit import default_timer as timer
+start = timer()
 
 with open('rosalind_fib.txt') as dataset:
     dataset = dataset.readline().strip().split(' ')
@@ -18,3 +20,6 @@ with open('rosalind_fib.txt') as dataset:
 
     with open('rosalind_fib_out.txt', 'w') as output:
         output.write(str(total_rabbits))
+        
+end = timer()
+print("Time Elapsed: " + str(end - start) + " seconds")
